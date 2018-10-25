@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function() {
 let gameStart = function() {
 	Stock.deals('myHand', 8);
 	Deck.setCards('myHand');
-	debug(Deck.cards);
+	//debug(Deck.cards);
 	// Card.disp(Deck.cards);
 
 }

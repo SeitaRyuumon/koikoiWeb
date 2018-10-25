@@ -12,13 +12,14 @@ var _ = require('lodash')
 const express = require('express');
 const app = express();
 
+app.use(express.static('images'));
+app.use(express.static('public'));
+//app.use('/static', express.static('images'));
+//app.use('/static', express.static('public'));
+
 app.get('/', (req, res) => {
     res.sendfile('./index.html');
 });
-
-
-app.use（express.static（ 'public'））;
-
 
 app.listen(3000, () => {
     console.log("My app listening on port 3000!");

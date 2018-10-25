@@ -20,6 +20,32 @@ let Deck = {
 			this.toUpdate
 		}
 	}
+	
+	init : function() {
+		
+	},
+	render : function() {
+		
+	},
+	create : function() {
+	
+	},
+	
+	move : function() {
+		
+	},
+	
+	
+	disp : function(e, pos) {
+		if(Array.isArray(e)) {
+			for(const key in e) {
+				this.move(e[key], 'field');
+				document.getElementById(pos).appendChild(e[key]);
+			}
+		} else {
+			this.move(e, 'field');
+			document.getElementById(pos).appendChild(e);
+		}
 	*/
 }
 

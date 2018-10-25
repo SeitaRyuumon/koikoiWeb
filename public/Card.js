@@ -5,13 +5,17 @@
 
 const Card = {
 	url : [
-		"images/01.png",
-		"images/02.png",
-		"images/03.png",
-		"images/04.png",
-		"images/05.png",
-		"images/06.png",
+		"01.png",
+		"02.png",
+		"03.png",
+		"04.png",
+		"05.png",
+		"06.png",
 	],
+	
+	init : function() {
+		
+	},
 	create : function() {
 		let r = this.random(6);
 		let e 	= document.createElement('img');
@@ -19,18 +23,20 @@ const Card = {
 		e.id 	= r + 1;
 		return e;
 	},
-	move : function(e, pos) {
-		e.addEventListener('click', function() {
-			document.getElementById(pos).appendChild(e);
-		}, {once : true});
-	},
 	random : function(seed) {
 		return Math.floor(Math.random()*seed);
 	},
-	toUpdate : function(e, pos) {
-		//  画面の更新処理
+	render : function(e, pos) {
 		document.getElementById(pos).appendChild(e);
 	},
+	
+	move : function(e, nextPos) {
+		e.addEventListener('click', function() {
+			document.getElementById(nextPos).appendChild(e);
+		}, {once : true});
+	},
+	
+	
 	/*
 	disp : function(e, pos) {
 		if(Array.isArray(e)) {
@@ -42,6 +48,5 @@ const Card = {
 			this.move(e, 'field');
 			document.getElementById(pos).appendChild(e);
 		}
-	},
 	*/
 };
